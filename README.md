@@ -7,7 +7,7 @@ A simple and clean expandable card animation made using HTML, CSS, and JavaScrip
 ## 🔗 Live Preview  
 Click below to view the project:
 
-👉 **[Live Demo]()**
+👉 **[Live Demo](https://gauravchhetri1.github.io/Expandable-Card-UI/)**
 
 ---
 
