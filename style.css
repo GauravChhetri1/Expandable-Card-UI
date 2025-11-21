@@ -1,0 +1,113 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #FFF2C6;
+    padding: 2rem;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.card-contaner {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1.8rem;
+    flex-wrap: nowrap;
+    overflow-x: auto;        /* ★ Fix overflow */
+    padding-bottom: 1rem;    /* looks clean */
+    scroll-behavior: smooth;
+}
+
+.card-contaner::-webkit-scrollbar {
+    height: 8px;
+}
+.card-contaner::-webkit-scrollbar-thumb {
+    background: #0003;
+    border-radius: 100px;
+}
+
+.card {
+    flex: 0 0 10rem;          /* ★ keeps fixed width */
+    height: 22rem;
+    border-radius: 2rem;
+    position: relative;
+    overflow: hidden;
+    -webkit-box-reflect: below 0.5rem linear-gradient(transparent, transparent, #0004);
+    transition: 0.5s ease;
+}
+
+.card:hover {
+    flex-basis: 30rem;        /* ★ better than width */
+}
+
+.card img {
+    width: 25rem;
+    position: absolute;
+    top: 50%;
+    left: 100%;
+    transform: translate(-30%, -50%);
+    transition: 0.6s ease;
+}
+
+.card:hover img {
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(20deg);
+}
+
+/* COLORS */
+.card:nth-child(1) { background: #B6F33A; }
+.card:nth-child(2) { background: #5674b6; }
+.card:nth-child(3) { background: #E43D77; }
+.card:nth-child(4) { background: #66CADD; }
+.card:nth-child(5) { background: #F4C742; }
+
+/* --------------------- RESPONSIVE --------------------- */
+
+/* Tablet */
+@media (max-width: 992px) {
+    .card {
+        flex-basis: 8rem;
+        height: 18rem;
+    }
+    .card:hover {
+        flex-basis: 20rem;
+    }
+    .card img {
+        width: 18rem;
+    }
+}
+
+/* Redmi Note 12 Responsive */
+@media (max-width: 430px) {
+    .card-contaner {
+        flex-direction: column;
+        align-items: center;
+        gap: 1.2rem;
+    }
+
+    .card {
+        width: 100%;
+        max-width: 20rem;
+        height: 13rem;
+    }
+
+    .card:hover {
+        width: 100%;
+    }
+
+    .card img {
+        width: 10rem;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+
+    .card:hover img {
+        transform: translate(-50%, -50%) rotate(8deg);
+    }
+}
